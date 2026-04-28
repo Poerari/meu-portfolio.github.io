@@ -1,23 +1,22 @@
-/* Variáveis de Identidade e Temas */
 :root {
-    --bg-color: #e7c3a8;
-    --text-h1: #333333;
-    --text-p: #555555;
-    --nav-bg: rgba(255, 255, 255, 0.1);
-    --accent-color: #e91e63; /* Rosa Identidade */
-    --corda-color: #c48b6a;
-    --shadow-color: rgba(0,0,0,0.4);
-    --transition-speed: 0.5s;
+    /* Modo Claro - Rosa Suave */
+    --bg-color: #fce4ec; 
+    --text-h1: #880e4f;
+    --text-p: #ad1457;
+    --accent-color: #d81b60;
+    --nav-bg: rgba(252, 228, 236, 0.8);
+    --shadow-color: rgba(216, 27, 96, 0.2);
+    --transition-speed: 0.4s;
 }
 
 [data-theme="dark"] {
-    --bg-color: #1a1a1a;
-    --text-h1: #fce4ec;
-    --text-p: #d1d1d1;
-    --nav-bg: rgba(0, 0, 0, 0.3);
-    --accent-color: #ff4081;
-    --corda-color: #444;
-    --shadow-color: rgba(0,0,0,0.8);
+    /* Modo Escuro - Rosa Profundo */
+    --bg-color: #0b0b0f; 
+    --text-h1: #ffffff;
+    --text-p: #f8bbd0;
+    --accent-color: #ff4081; /* Rosa choque neon */
+    --nav-bg: rgba(11, 11, 15, 0.9);
+    --shadow-color: rgba(255, 64, 129, 0.5);
 }
 
 * {
@@ -27,124 +26,173 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-p);
-    transition: background-color var(--transition-speed), color var(--transition-speed);
+    transition: background-color var(--transition-speed);
     overflow: hidden;
 }
 
-/* Navbar Estilo Vidro */
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
     height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    padding: 0 5%;
     background: var(--nav-bg);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     z-index: 1000;
 }
 
-.nav-title {
-    font-size: 20px;
+.Logo {
+    font-size: 22px;
     font-weight: bold;
     color: var(--text-h1);
-    letter-spacing: 1px;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .menu-icon span {
-    display: block;
     width: 25px;
     height: 2px;
     background-color: var(--accent-color);
-    margin: 5px 0;
-    border-radius: 2px;
 }
 
-/* Switch de Tema */
+/* Menu Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 11, 15, 0.98);
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.close-icon {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.overlay-content h2 {
+    color: var(--accent-color);
+    margin-bottom: 30px;
+}
+
+.nav-links-overlay {
+    list-style: none;
+    text-align: center;
+}
+
+.nav-links-overlay li { margin: 25px 0; }
+
+.nav-links-overlay a {
+    color: var(--text-h1);
+    font-size: 35px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links-overlay a:hover { color: var(--accent-color); }
+
+/* Switch de Tema - Texto Escondido corrigido */
 #switch { display: none; }
 label[for="switch"] {
     cursor: pointer;
-    width: 50px;
-    height: 26px;
+    width: 45px;
+    height: 22px;
     background: #4b5563;
     display: block;
     border-radius: 100px;
     position: relative;
-    text-indent: -9999px;
+    text-indent: -9999px; /* Esconde a palavra Toggle */
+    overflow: hidden;
 }
 label[for="switch"]:after {
     content: '';
     position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 20px;
-    height: 20px;
+    top: 2px; left: 2px;
+    width: 18px; height: 18px;
     background: #fff;
-    border-radius: 90px;
+    border-radius: 50%;
     transition: 0.3s;
 }
 #switch:checked + label { background: var(--accent-color); }
-#switch:checked + label:after { left: calc(100% - 3px); transform: translateX(-100%); }
+#switch:checked + label:after { left: calc(100% - 2px); transform: translateX(-100%); }
 
-/* Layout Principal */
+/* Layout e Crachá */
 .container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 100vh;
-    padding: 80px 40px 40px 40px;
+    padding: 0 10%;
 }
 
-.texto {
-    max-width: 450px;
-    opacity: 0;
-    animation: aparecer 2s ease forwards 1.2s;
-}
-
-.texto h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-    color: var(--text-h1);
-}
-
-.bio { margin: 20px 0; line-height: 1.6; }
+.nome-destaque { color: var(--accent-color); }
 
 .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-right: 10px;
-    border: 2px solid var(--accent-color);
-    color: var(--accent-color);
+    padding: 12px 25px;
+    border-radius: 50px;
     text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
     transition: 0.3s;
 }
 
-.btn:hover {
-    background: var(--accent-color);
-    color: white;
-}
+.primary { background: var(--accent-color); color: white; }
+.secondary { border: 1px solid var(--accent-color); color: var(--accent-color); margin-left: 10px; }
 
-/* Crachá 3D e Animações */
+.cracha img {
+    height: 500px;
+    filter: drop-shadow(0 0 30px var(--shadow-color));
+    animation: balanco 4s ease-in-out infinite;
+}
 .cracha-container {
     position: relative;
     perspective: 1200px;
+    margin-top: -150px; /* Adicione isso para subir o conjunto todo */
 }
-
 .corda {
     width: 4px;
-    height: 150px;
+    height: 90px; 
     background-color: var(--corda-color);
     position: absolute;
-    top: -180px;
+    top: -90px;   
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
@@ -152,29 +200,49 @@ label[for="switch"]:after {
 }
 
 .cracha img {
-    height: 600px; /* Aumentado conforme solicitado */
-    filter: drop-shadow(15px 15px 30px var(--shadow-color));
-    transform-origin: top center;
-    transform-style: preserve-3d;
-    animation: descer 1s ease-out forwards, balanco 4s ease-in-out 1s infinite;
+    height: 650px;
+    filter: drop-shadow(0 0 30px var(--shadow-color));
+    transform-origin: top center; /* Importante para o balanço */
+    
+    /* ADICIONE/ATUALIZE ESTA LINHA: Garante que ele use as duas animações */
+    animation: descer 1s ease-out forwards, balanco 4s ease-in-out infinite;
 }
 
+.skills-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+}
+
+.skills-item{
+    background:#1a1a1a;
+    border: 1px, solid #ff007f;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.skills-item:hover {
+    transform: translateY(-5px);
+}
+@keyframes descerCorda {
+    from { top: -500px; }
+    to { top: -90px; } 
+}
 @keyframes descer {
-    0% { transform: translateY(-500px) rotateY(0deg); opacity: 0; }
-    100% { transform: translateY(0) rotateY(-25deg); opacity: 1; }
+    0% { transform: translateY(-500px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 1; } /* Termina na posição normal, mais alta */
 }
 
 @keyframes balanco {
-    0%, 100% { transform: rotateY(-25deg) rotateX(5deg) rotateZ(0deg); }
-    50% { transform: rotateY(-15deg) rotateX(8deg) rotateZ(1deg); }
+    0%, 100% { transform: rotate(-1deg); }
+    50% { transform: rotate(1deg); }
 }
 
-@keyframes aparecer {
-    from { opacity: 0; transform: translateX(-60px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes descerCorda {
-    from { transform: translate(-50%); top: -500px; }
-    to { transform: translate(-50%); top: -180px; }
+@media (max-width: 768px) {
+    .container { flex-direction: column; text-align: center; padding-top: 100px; }
+    .cracha img { height: 350px; }
+    .secondary { margin-left: 0; }
 }
