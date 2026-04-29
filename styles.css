@@ -30,7 +30,8 @@ body {
     background-color: var(--bg-color);
     color: var(--text-p);
     transition: background-color var(--transition-speed);
-    overflow: hidden;
+    /*overflow: hidden;*/
+    overflow-x: hidden;
 }
 
 /* Navbar */
@@ -208,25 +209,82 @@ label[for="switch"]:after {
     animation: descer 1s ease-out forwards, balanco 4s ease-in-out infinite;
 }
 
+.skills-section {
+    padding: 80px 10%;
+    background-color:transparent
+    color: var(--text-h1);
+}
+
+.skill-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--text-h1); /* Usa a cor do seu tema */
+}
+
 .skills-container{
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 20px;
-    padding: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
 }
 
 .skills-item{
-    background:#1a1a1a;
-    border: 1px, solid #ff007f;
-    padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.3s;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #1c496c;
+}
+
+.progress-bar-container {
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color:var(--accent-color);
+    border-radius: 4px;
+    position: relative;
+}
+
+.percentage-label {
+    position: absolute;
+    top: -35px; /* Ajustado para não sobrepor */
+    right: 0;
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.percentage-label::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--accent-color) transparent transparent transparent;
 }
 
 .skills-item:hover {
     transform: translateY(-5px);
 }
+
 @keyframes descerCorda {
     from { top: -500px; }
     to { top: -90px; } 
