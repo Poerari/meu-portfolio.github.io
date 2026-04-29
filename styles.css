@@ -211,8 +211,8 @@ label[for="switch"]:after {
 
 .skills-section {
     padding: 80px 10%;
-    background-color:transparent
-    color: var(--text-h1);
+    background-color:transparent;
+    color:var(--text-h1);
 }
 
 .skill-title {
