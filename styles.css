@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     /* Modo Claro - Rosa Suave */
     --bg-color: #fce4ec; 
@@ -367,12 +371,16 @@ label[for="switch"]:after {
 }
 
 .projetos {
-    padding: 100px 10% 80px 10%;
+    padding: 80px 10%; 
     background-color: var(--bg-color);
+    width: 100%;
+    box-sizing: border-box;
 }
 
+
+
 .project-title {    
-   font-size: 16px;
+    font-size: 16px;
     color: var(--text-h1);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -393,8 +401,9 @@ label[for="switch"]:after {
 
 .project-details{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    justify-items: center;  
 }
 
 .project-item {
@@ -403,10 +412,13 @@ label[for="switch"]:after {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    padding: 15%;
-    box-shadow: 0 10px 30px var(--shadow-color);
+    padding: 10%;
+    box-shadow: 0 5px 15px var(--shadow-color);
     transition: transform 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 400px; 
+    max-width: 100%;
+    margin: 0 auto;
     
 }
 
@@ -430,6 +442,96 @@ label[for="switch"]:after {
     padding: 15px;
     font-weight: bold;
     color: var(--accent-color);
+}
+
+.contato {
+    padding: 80px 10%; 
+    background-color: var(--bg-color); 
+    width: 100%;
+}
+
+.main-layout-contact {
+    text-align: center;
+}
+
+.contact-title {
+    display: flex;
+    justify-content: center; 
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: row;      /* Força a ficar em linha */
+    justify-content: center;   /* Centraliza o grupo todo no meio da tela */
+    align-items: flex-start;   /* Alinha o topo dos ícones */
+    gap: 40px;                 /* Espaçamento entre os contatos */
+    flex-wrap: nowrap;         /* Impede que eles pulem para a linha de baixo */
+    width: 100%;
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;    /* Mantém ícone em cima do texto dele */
+    align-items: center;
+    text-align: center;
+    min-width: 120px;          /* Dá uma largura mínima para não esmagar o texto */
+    flex: 1;                   /* Faz com que dividam o espaço igualmente */
+    max-width: 400px;
+}
+
+.contact-item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a2e;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.contact-item a:hover {
+    transform: translateY(-5px);
+    background-color: #252545;
+}
+
+
+.icon-link {
+    background-color: #1a1a2e;
+    width: 6opx;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.icon-link:hover {
+    transform: translateY(-5px);
+}
+
+.icon-link img {
+    width: 25px;
+    height: 25px;
+    filter: brightness(0) invert(1);
+}
+
+.contact-item span {
+    font-weight: bold;
+    color: #ff66a3; /* Cor rosa que você está usando nos títulos */
+    margin-bottom: 5px;
+}
+
+.contact-item p {
+    color: #a9a9b3;
+    font-size: 0.9rem;
+    margin-top: 10px;
 }
 
 @keyframes descerCorda {
