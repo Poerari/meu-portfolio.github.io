@@ -31,6 +31,7 @@ body {
     color: var(--text-p);
     transition: background-color var(--transition-speed);
     /*overflow: hidden;*/
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
@@ -227,7 +228,7 @@ label[for="switch"]:after {
     flex-direction: column;
     gap: 20px;
     max-width: 600px;
-    margin: 0 auto;
+    margin: 50px;
 }
 
 .skills {
@@ -265,9 +266,10 @@ label[for="switch"]:after {
     right: 0;
     background-color: var(--accent-color);
     color: #fff;
-    padding: 3px 8px;
+    padding: 2px 6px;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 11px;
+    white-space: nowrap;
 }
 
 .percentage-label::after {
@@ -283,6 +285,151 @@ label[for="switch"]:after {
 
 .skills-item:hover {
     transform: translateY(-5px);
+}
+
+.about-skills-section {
+    padding: 100px 10% 80px 10%;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.main-layout {
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 24px;
+    color: var(--text-h1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.profile-intro {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.heart{
+    color: var(--accent-color);
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detail-item .label {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--text-h1);
+    letter-spacing: 1px;
+}
+
+.detail-item .value {
+    font-size: 16px;
+    color: var(--text-p);
+    opacity: 0.8;
+}
+
+.profile-side {
+    flex: 1; 
+    text-align: left;
+}
+
+.skills-side {
+    flex: 1;
+}
+
+.skills-subtitle {
+    margin-bottom: 30px;
+    font-family: italic;
+    opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+    .main-layout {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .about-skills-section {
+       padding-top: 150px; 
+    
+    }
+}
+
+.projetos {
+    padding: 100px 10% 80px 10%;
+    background-color: var(--bg-color);
+}
+
+.project-title {    
+   font-size: 16px;
+    color: var(--text-h1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.project-title h2 {
+    color: var(--text-h1);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.project-intro {
+   font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.project-details{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.project-item {
+    background-color:var(--nav-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 15%;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; 
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.project-item:hover img {
+    transform: scale(1.05);
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+}
+
+.project-item span {
+    padding: 15px;
+    font-weight: bold;
+    color: var(--accent-color);
 }
 
 @keyframes descerCorda {
