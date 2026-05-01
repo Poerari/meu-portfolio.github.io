@@ -366,6 +366,51 @@ label[for="switch"]:after {
     
     }
 }
+.divisor {
+    border: 0;
+    height: 4px;
+    background-color: #ff66a3;
+    margin: 40px 0;
+    border-radius: 10px;
+}
+
+.section {
+    border-top: 5px solid #ff66a3;
+    margin-left: 15%;    /* Empurra a seção da esquerda */
+    margin-right: 15%;   /* Empurra a seção da direita */
+    padding-top: 40px;   /* Espaço entre a linha e o texto */
+}
+
+
+
+.linha-gradiente {
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ff66a3, transparent);
+    margin-top: 0 auto;
+}
+
+.barra-separadora {
+    width: 100%;
+    height: 8px; /* Aqui você controla a grossura real */
+    background-color: #ff66a3;
+    margin: 50px 0;
+    border-radius: 4px;
+}
+
+.linha-meio {
+    width: 60%;          /* A linha ocupará apenas 60% da largura da tela */
+    height: 5px;         /* A grossura que você definiu */
+    background-color: #ff66a3; 
+    margin: 50px auto;   /* '50px' é o espaço em cima/baixo, 'auto' centraliza a linha */
+    border-radius: 10px;
+}
+
+#sobre, #habilidades, #projetos, #contato {
+    border-top: 5px solid #ff66a3 !important; /* 5px é bem grosso, ajuste se precisar */
+    padding-top: 60px; /* Aumenta o espaço entre a linha e o texto */
+    margin-top: 20px;
+}
 
 .projetos {
     padding: 80px 10%; 
