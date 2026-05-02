@@ -178,7 +178,7 @@ label[for="switch"]:after {
 }
 
 .primary { background: var(--accent-color); color: white; }
-.secondary { border: 1px solid var(--accent-color); color: var(--accent-color); margin-left: 10px; }
+/*.secondary { border: 1px solid var(--accent-color); color: var(--accent-color); margin-left: 10px; }*/
 
 .cracha img {
     height: 500px;
@@ -317,9 +317,14 @@ label[for="switch"]:after {
     margin-bottom: 40px;
 }
 
-.heart{
-    color: var(--accent-color);
+a {
+  color: inherit;       
+ 
 }
+
+/*.heart{
+    color: var(--accent-color);
+}*/
 
 .profile-details {
     display: flex;
@@ -399,18 +404,12 @@ label[for="switch"]:after {
 }
 
 .linha-meio {
-    width: 60%;          /* A linha ocupará apenas 60% da largura da tela */
-    height: 5px;         /* A grossura que você definiu */
+    width: 80%;          /* A linha ocupará apenas 60% da largura da tela */
+    height: 3px;         /* A grossura que você definiu */
     background-color: #ff66a3; 
     margin: 50px auto;   /* '50px' é o espaço em cima/baixo, 'auto' centraliza a linha */
     border-radius: 10px;
-}
-
-#sobre, #habilidades, #projetos, #contato {
-    border-top: 5px solid #ff66a3 !important; /* 5px é bem grosso, ajuste se precisar */
-    padding-top: 60px; /* Aumenta o espaço entre a linha e o texto */
-    margin-top: 20px;
-}
+}   
 
 .projetos {
     padding: 80px 10%; 
