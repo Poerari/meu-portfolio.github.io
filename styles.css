@@ -178,7 +178,7 @@ label[for="switch"]:after {
 .cracha img {
     height: 500px;
     filter: drop-shadow(0 0 30px var(--shadow-color));
-    animation: balanco 4s ease-in-out infinite;
+    animation: balanco 2s ease-in-out infinite;
 }
 .cracha-container {
     position: relative;
@@ -715,8 +715,8 @@ a {
 }
 
 @keyframes balanco {
-    0%, 100% { transform: rotate(-1deg); }
-    50% { transform: rotate(1deg); }
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg); }
 }
 
 @media (max-width: 768px) {
