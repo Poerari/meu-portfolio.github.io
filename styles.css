@@ -3,7 +3,6 @@ html {
 }
 
 :root {
-    /* Modo Claro - Rosa Suave */
     --bg-color: #fce4ec; 
     --text-h1: #880e4f;
     --text-p: #ad1457;
@@ -14,11 +13,10 @@ html {
 }
 
 [data-theme="dark"] {
-    /* Modo Escuro - Rosa Profundo */
     --bg-color: #0b0b0f; 
     --text-h1: #ffffff;
     --text-p: #f8bbd0;
-    --accent-color: #ff4081; /* Rosa choque neon */
+    --accent-color: #ff4081; 
     --nav-bg: rgba(11, 11, 15, 0.9);
     --shadow-color: rgba(255, 64, 129, 0.5);
 }
@@ -34,12 +32,11 @@ body {
     background-color: var(--bg-color);
     color: var(--text-p);
     transition: background-color var(--transition-speed);
-    /*overflow: hidden;*/
     overflow-y: auto;
     overflow-x: hidden;
 }
 
-/* Navbar */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -73,7 +70,6 @@ body {
     background-color: var(--accent-color);
 }
 
-/* Menu Overlay */
 .menu-overlay {
    position: fixed;
     top: 0;
@@ -81,7 +77,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.95);
-    display: none; /* Começa escondido */
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -131,7 +127,7 @@ body {
 
 .nav-links-overlay a:hover { color: var(--accent-color); }
 
-/* Switch de Tema - Texto Escondido corrigido */
+
 #switch { display: none; }
 label[for="switch"] {
     cursor: pointer;
@@ -141,7 +137,7 @@ label[for="switch"] {
     display: block;
     border-radius: 100px;
     position: relative;
-    text-indent: -9999px; /* Esconde a palavra Toggle */
+    text-indent: -9999px; 
     overflow: hidden;
 }
 label[for="switch"]:after {
@@ -156,7 +152,6 @@ label[for="switch"]:after {
 #switch:checked + label { background: var(--accent-color); }
 #switch:checked + label:after { left: calc(100% - 2px); transform: translateX(-100%); }
 
-/* Layout e Crachá */
 .container {
     display: flex;
     justify-content: space-around;
@@ -188,7 +183,7 @@ label[for="switch"]:after {
 .cracha-container {
     position: relative;
     perspective: 1200px;
-    margin-top: -150px; /* Adicione isso para subir o conjunto todo */
+    margin-top: -150px; 
 }
 .corda {
     width: 4px;
@@ -205,9 +200,9 @@ label[for="switch"]:after {
 .cracha img {
     height: 650px;
     filter: drop-shadow(0 0 30px var(--shadow-color));
-    transform-origin: top center; /* Importante para o balanço */
+    transform-origin: top center; 
     
-    /* ADICIONE/ATUALIZE ESTA LINHA: Garante que ele use as duas animações */
+    
     animation: descer 1s ease-out forwards, balanco 4s ease-in-out infinite;
 }
 
@@ -221,7 +216,7 @@ label[for="switch"]:after {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 10px;
-    color: var(--text-h1); /* Usa a cor do seu tema */
+    color: var(--text-h1); 
 }
 
 .skills-container{
@@ -381,9 +376,9 @@ a {
 
 .section {
     border-top: 5px solid #ff66a3;
-    margin-left: 15%;    /* Empurra a seção da esquerda */
-    margin-right: 15%;   /* Empurra a seção da direita */
-    padding-top: 40px;   /* Espaço entre a linha e o texto */
+    margin-left: 15%;   
+    margin-right: 15%;  
+    padding-top: 40px;   
 }
 
 
@@ -397,17 +392,17 @@ a {
 
 .barra-separadora {
     width: 100%;
-    height: 8px; /* Aqui você controla a grossura real */
+    height: 8px; 
     background-color: #ff66a3;
     margin: 50px 0;
     border-radius: 4px;
 }
 
 .linha-meio {
-    width: 80%;          /* A linha ocupará apenas 60% da largura da tela */
-    height: 3px;         /* A grossura que você definiu */
+    width: 80%;          
+    height: 3px;         
     background-color: #ff66a3; 
-    margin: 50px auto;   /* '50px' é o espaço em cima/baixo, 'auto' centraliza a linha */
+    margin: 50px auto;   
     border-radius: 10px;
 }   
 
@@ -469,7 +464,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85); /* Fundo escuro */
+    background: rgba(0, 0, 0, 0.85); 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -491,7 +486,7 @@ a {
 .modal {
     display: none;
     position: fixed;
-    z-index: 2000; /* Acima da navbar */
+    z-index: 2000; 
     left: 0;
     top: 0;
     width: 100%;
@@ -544,7 +539,7 @@ a {
     to { transform: scale(1); opacity: 1; }
 }
 
-/* Ajuste Responsivo */
+
 @media (max-width: 768px) {
     .modal-body { flex-direction: column; }
     .modal-body img { width: 100%; }
@@ -572,7 +567,7 @@ a {
     color: var(--accent-color);
 }
 
-/* Estilo do Card */
+
 .projeto-card {
     position: relative;
     width: 300px;
@@ -585,22 +580,22 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8); /* Fundo escuro transparente */
+    background: rgba(0, 0, 0, 0.8); 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Começa invisível */
-    transition: opacity 0.3s ease; /* Efeito suave */
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
 }
 
 .projeto-card:hover .overlay {
-    opacity: 1; /* Aparece ao passar o mouse */
+    opacity: 1; 
 }
 
-/* Estilo do Modal */
+
 .modal {
-    display: none; /* Escondido por padrão */
+    display: none; 
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -700,7 +695,7 @@ a {
 
 .contact-item span {
     font-weight: bold;
-    color: #ff66a3; /* Cor rosa que você está usando nos títulos */
+    color: #ff66a3; 
     margin-bottom: 5px;
 }
 
@@ -716,7 +711,7 @@ a {
 }
 @keyframes descer {
     0% { transform: translateY(-500px); opacity: 0; }
-    100% { transform: translateY(0px); opacity: 1; } /* Termina na posição normal, mais alta */
+    100% { transform: translateY(0px); opacity: 1; } 
 }
 
 @keyframes balanco {
@@ -740,7 +735,7 @@ a {
     .secondary { margin-left: 0; }
 
     .project-details {
-        grid-template-columns: 1fr; /* Uma coluna apenas em telas menores */
+        grid-template-columns: 1fr; 
         gap: 30px;
     }
     

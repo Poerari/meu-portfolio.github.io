@@ -44,7 +44,7 @@ if (themeSwitch) {
 function abrirModal(titulo, descricao, imagem, link) {
     const modal = document.getElementById("meuModal");
     
-    // Preenche os campos do modal com as informações do projeto clicado
+   
     document.getElementById("modal-titulo").innerText = titulo;
     document.getElementById("modal-descricao").innerText = descricao;
     document.getElementById("modal-img").src = imagem;
@@ -54,6 +54,6 @@ function abrirModal(titulo, descricao, imagem, link) {
 
 function fecharModal() {
     const modal = document.getElementById("meuModal");
-    modal.style.display = "none"; // Aqui ele muda o CSS para 'none' (escondido)
-    document.body.style.overflow = "auto"; // Devolve o scroll para a página
+    modal.style.display = "none"; 
+    document.body.style.overflow = "auto"; 
 }
