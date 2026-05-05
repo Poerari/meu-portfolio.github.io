@@ -41,14 +41,19 @@ if (themeSwitch) {
     });
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
+function abrirModal(titulo, descricao, imagem, link) {
+    const modal = document.getElementById("meuModal");
     
-    if (savedTheme === 'light') {
-        body.setAttribute('data-theme', 'light');
-        if (themeSwitch) themeSwitch.checked = true;
-    } else {
-        body.setAttribute('data-theme', 'dark');
-        if (themeSwitch) themeSwitch.checked = false;
-    }
-});
+    // Preenche os campos do modal com as informações do projeto clicado
+    document.getElementById("modal-titulo").innerText = titulo;
+    document.getElementById("modal-descricao").innerText = descricao;
+    document.getElementById("modal-img").src = imagem;
+    document.getElementById("modal-link").href = link;
+    modal.style.display = "block";
+}
+
+function fecharModal() {
+    const modal = document.getElementById("meuModal");
+    modal.style.display = "none"; // Aqui ele muda o CSS para 'none' (escondido)
+    document.body.style.overflow = "auto"; // Devolve o scroll para a página
+}

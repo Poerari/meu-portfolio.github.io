@@ -54,7 +54,7 @@
         <div class="cracha-container">
             <div class="corda"></div>
             <div class="cracha">
-                <img src="img/teste2.png" alt="Crachá">
+                <img src="img/teste 03.png" alt="Crachá">
             </div>
         </div>
     </div>
@@ -146,29 +146,62 @@
  <div class="linha-meio"></div>
   <section id="projetos" class="projetos">
     <div class="main-layout">
-    <h2 class="section-title">Meus Projetos</h2>
+        <h2 class="section-title">Meus Projetos</h2>
     </div>
     <p class="project-intro">Alguns dos meus projetos passados e presentes:</p>
+    
     <div class="project-details">
+        <!-- Projeto 1 -->
         <div class="project-item">
-            <span>Projeto 1</span>
-             <img src="img/phpadmym.jpg" alt="Projeto 1">
+            <img src="img/1 projeto.png" alt="Biblioteca Virtual">
+            <div class="overlay">
+                <h3>Biblioteca Virtual</h3>
+                <button class="btn-ver-mais" onclick="abrirModal('Biblioteca Virtual', 'Implementação de um sistema de recomendação de livros utilizando estruturas de Árvore Binária e Grafos. O algoritmo organiza títulos por ordem de relevância e similaridade, otimizando a busca e a organização de grandes acervos de dados.', 'img/1 projeto.png', 'https://github.com/Poerari/bibliotecaVirtual.github.io-')">Ver Mais</button>
+            </div>
         </div>
-         <div class="project-item">
-            <span>Projeto 2</span>
-             <img src="img/phpadmym.jpg" alt="Projeto 2">
+
+        <!-- Projeto 2 -->
+        <div class="project-item">
+            <img src="img/dashboard.png" alt="Indicadores">
+            <div class="overlay">
+                <h3>Gincana Solidária (Dashboard de Indicadores)</h3>
+                <button class="btn-ver-mais" onclick="abrirModal('Dashboard de Solidariedade', 'Dashboard interativo desenvolvido para o monitoramento em tempo real de arrecadações e indicadores sociais. Focado em Business Intelligence, o projeto transforma dados brutos em visualizações claras, como rankings de equipes e métricas de tonelagem arrecadada.', 'imG/dashboard.png', 'https://github.com/Poerari/solidtech2.github.io')">Ver Mais</button>
+            </div>
         </div>
-         <div class="project-item">
-            <span>Projeto 3</span>
-             <img src="img/phpadmym.jpg" alt="Projeto 3">
+        
+        <div class="project-item">
+            <img src="img/gerenciador.png" alt="Gerenciador">
+            <div class="overlay">
+                <h3>Sistema de Gestão Acadêmica (Console)</h3>
+                <button class="btn-ver-mais" onclick="abrirModal('Gerenciador Estudantil', 'Aplicação back-end voltada para a gestão de instituições de ensino. O sistema permite o controle completo de cadastros de estudantes, professores, disciplinas e matrículas, utilizando uma interface de console intuitiva para gerenciamento de fluxo de dados acadêmicos.', 'img/gerenciador.png', 'https://github.com/Poerari/gerenciadorEstudantil.github.io')">Ver Mais</button>
+            </div>
         </div>
-         <div class="project-item">
-            <span>Projeto 4</span>
-             <img src="img/phpadmym.jpg" alt="Projeto 4">
+
+        <div class="project-item">
+            <img src="img/projeto 4.png" alt="Gerenciador">
+            <div class="overlay">
+                <h3>FitFlow - Gerenciador de Academias</h3>
+                <button class="btn-ver-mais" onclick="abrirModal('FitFlow - Gerenciador de Academias', 'Sistema completo de gestão para academias (Full-Stack) com foco em segurança e experiência do usuário. Inclui módulos de autenticação de usuários, controle de acesso e gerenciamento administrativo, desenvolvido com integração entre front-end responsivo e banco de dados.', 'img/projeto 4.png', 'https://github.com/Poerari/loginAcademia.github.io')">Ver Mais</button>
+            </div>
+        </div>
+        
+    </div>
+
+    
+    <div id="meuModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modal-img" src="" alt="Detalhe do Projeto">
+                <div class="texto-detalhe">
+                    <h2 id="modal-titulo">Título do Projeto</h2>
+                    <p id="modal-descricao">Descrição detalhada do seu projeto aqui...</p>
+                    <a id="modal-link" href="#" target="_blank" class="btn primary">Acessar repositório</a>
+                </div>
+            </div>
         </div>
     </div>
- </section>
-
+</section>
 <div class="linha-meio"></div>
  <section id="contato" class="contato">
     <div class="main-layout-contact">
