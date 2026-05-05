@@ -173,7 +173,6 @@ label[for="switch"]:after {
 }
 
 .primary { background: var(--accent-color); color: white; }
-/*.secondary { border: 1px solid var(--accent-color); color: var(--accent-color); margin-left: 10px; }*/
 
 .cracha img {
     height: 500px;
@@ -258,7 +257,7 @@ label[for="switch"]:after {
 
 .percentage-label {
     position: absolute;
-    top: -35px; /* Ajustado para não sobrepor */
+    top: -35px;
     right: 0;
     background-color: var(--accent-color);
     color: #fff;
@@ -737,6 +736,23 @@ a {
     .project-details {
         grid-template-columns: 1fr; 
         gap: 30px;
+    }
+
+    .skills-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-item {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 12px;
     }
     
 }
